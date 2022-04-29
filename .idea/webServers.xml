@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="8bc24351-8080-4e45-b3a0-5d0bfd987b76" name="HETZNER" url="http://gostudent22.s1910456005.student.kwmhgb.at">
+        <fileTransfer rootFolder="/usr/home/sstud238/public_html/gostudent22/gostudentServer" accessType="SFTP" host="s1910456005.student.kwmhgb.at" port="222" sshConfigId="3f5cc27d-c4cc-4c7f-9f37-266a04907a2f" sshConfig="HETZNER">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

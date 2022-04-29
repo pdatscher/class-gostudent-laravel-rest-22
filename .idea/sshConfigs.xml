@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="s1910456005.student.kwmhgb.at" id="3f5cc27d-c4cc-4c7f-9f37-266a04907a2f" port="222" customName="HETZNER" nameFormat="CUSTOM" username="sstud238">
+        <option name="customName" value="HETZNER" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
