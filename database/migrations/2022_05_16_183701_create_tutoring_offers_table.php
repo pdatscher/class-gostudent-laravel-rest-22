@@ -14,7 +14,10 @@ class CreateTutoringOffersTable extends Migration
     public function up()
     {
         Schema::create('tutoringOffer', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('title');
+            $table->string('subject');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
