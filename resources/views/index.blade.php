@@ -23,5 +23,11 @@
 <body class="antialiased">
 <h1>KWM GO STUDENT</h1>
 
+<ul>
+    @foreach ($tutoringOffers as $tutoringOffer)
+        <li><a href="tutoringoffers/{{$tutoringOffer->id}}">{{$tutoringOffer->headline}}: {{$tutoringOffer->subject}}</a></li><br>
+    @endforeach
+</ul>
+
 </body>
 </html>

@@ -14,7 +14,18 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('url');
+            $table->string('title');
+            //1:n relation anlegen
+            /*
+            $table->bigInteger("tutoring_offers_id")->unsigned();
+
+            //create constraint - image wird bei löschen von tutoring offer gelöscht
+            $table->foreign('tutoring_offers_id')
+                ->references('id')->on('tutoring_offers')
+                ->onDelete('cascade');
+*/
             $table->timestamps();
         });
     }

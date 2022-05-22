@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af56215-b544-43ac-9bc4-ee0fc0e6b6c5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/AvailableDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AvailableDate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TutoringOffer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TutoringOffer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_05_16_183701_create_tutoring_offers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_05_16_183701_create_tutoring_offers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_05_16_184625_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_05_16_184625_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_05_20_143849_create_available_dates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_05_20_143849_create_available_dates_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/AvailableDatesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/AvailableDatesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/TutoringOffersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/TutoringOffersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +47,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -193,7 +212,8 @@
       <workItem from="1650975808550" duration="3960000" />
       <workItem from="1651221796542" duration="1645000" />
       <workItem from="1652725251120" duration="5117000" />
-      <workItem from="1652984327020" duration="5785000" />
+      <workItem from="1652984327020" duration="11268000" />
+      <workItem from="1653215762824" duration="9684000" />
     </task>
     <task id="LOCAL-00001" summary="first model and migration">
       <created>1652871481668</created>
@@ -216,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653059098241</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first model and migration">
+      <created>1653062944881</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653062944881</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first model and migration">
+      <created>1653066565353</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653066565353</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

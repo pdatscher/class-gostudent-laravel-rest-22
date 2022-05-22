@@ -13,8 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//LISTENANSICHT
 Route::get('/', function () {
-    return view('index');
+    $tutoringOffers = DB::table('tutoring_offers')->get();
+    return view('index',compact('tutoringOffers'));
 });
+
+//DETAILANSICHT
+Route::get('/tutoringoffers/{id}', function($id) {
+    $tutoringOffer = DB::table('tutoring_offers')->find($id);
+    //dd($tutoringOffer);
+    return view('show',compact('tutoringOffer'));
+});
+
+//FILTEROPTIONEN
+// zB im zugehörigen Model isFavourite-Funktion einbauen
 
 

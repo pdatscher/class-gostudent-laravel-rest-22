@@ -13,10 +13,19 @@ class CreateAvailableDatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('availableDates', function (Blueprint $table) {
+        Schema::create('available_dates', function (Blueprint $table) {
             $table->increments('id');
             $table->date('day');
             $table->time('time');
+
+            //fk field for relations: model name lowercase + "_id"
+            //unsigned immer bei incrementing verwenden
+            $table->integer('tutoring_offer_id')->unsigned();
+
+            //create database constraint
+            $table->foreign('tutoring_offer_id')
+                ->references('id')->on('tutoring_offers')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +37,6 @@ class CreateAvailableDatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('availableDates');
+        Schema::dropIfExists('available_dates');
     }
 }

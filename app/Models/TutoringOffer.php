@@ -15,14 +15,22 @@ class TutoringOffer extends Model
      * define all properties that should be writeable
      * @var string[]
      */
-    protected $fillable =['title', 'subject', 'description', 'user_id'];
+    protected $fillable =['headline', 'subject', 'description', 'user_id'];
 
-
+    /**
+     * tutoring offer has many available dates
+     */
+    public function dates() : HasMany {
+        return $this->hasMany(AvailableDate::class);
+    }
 
     public function images() : HasMany {
         return $this->hasMany(Image::class);
     }
 
+    /**
+     * tutoring offer belongs to user (n:1)
+     */
     public function user() : BelongsTo {
         return $this->belongsTo(User::class);
     }

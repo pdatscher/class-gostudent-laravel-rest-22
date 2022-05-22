@@ -13,11 +13,25 @@ class CreateTutoringOffersTable extends Migration
      */
     public function up()
     {
-        Schema::create('tutoringOffer', function (Blueprint $table) {
+        Schema::create('tutoring_offers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
+            $table->string('headline');
             $table->string('subject');
             $table->text('description')->nullable();
+            //$table->integer('user_id')->default(1);
+
+            $table->foreignId('user_id')
+                ->unique()->constrained()
+                ->onDelete('cascade');
+            //fk field for relations: model name lowercase + "_id"
+            //unsigned immer bei incrementing verwenden
+            /*$table->integer('user_id')->unsigned();
+
+            //create database constraint
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');*/
+
             $table->timestamps();
         });
     }
@@ -29,6 +43,6 @@ class CreateTutoringOffersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tutoringOffer');
+        Schema::dropIfExists('tutoring_offers');
     }
 }
