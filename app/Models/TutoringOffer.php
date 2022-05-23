@@ -24,6 +24,10 @@ class TutoringOffer extends Model
         return $this->hasMany(AvailableDate::class);
     }
 
+    public function scheduled() : HasMany {
+        return $this->hasMany(ScheduledTutoring::class);
+    }
+
     public function images() : HasMany {
         return $this->hasMany(Image::class);
     }
