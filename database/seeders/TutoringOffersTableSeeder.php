@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Author;
 use App\Models\TutoringOffer;
 use App\Models\AvailableDate;
 use App\Models\User;
@@ -52,6 +53,9 @@ class TutoringOffersTableSeeder extends Seeder
         $date2->time = DateTime::createFromFormat('G-i', '14-00');
 
         $tutoringOffer->dates()->saveMany([$date1,$date2]);
+
+
+        $tutoringOffer->save();
 
     }
 }

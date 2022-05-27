@@ -26,6 +26,7 @@ class CreateAvailableDatesTable extends Migration
             $table->foreign('tutoring_offer_id')
                 ->references('id')->on('tutoring_offers')
                 ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

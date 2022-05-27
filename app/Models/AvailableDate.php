@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class AvailableDate extends Model
 
@@ -23,7 +24,15 @@ class AvailableDate extends Model
     /**
      * tutoring offer has many available dates
      */
-    public function tutoringOffer() : BelongsTo {
+    public function tutoring() : BelongsTo {
         return $this->belongsTo(TutoringOffer::class);
+    }
+
+    /*public function date() : BelongsTo {
+        return $this->belongsTo(ScheduledTutoring::class);
+    }*/
+
+    public function date() : HasMany {
+        return $this->belongsTo(ScheduledTutoring::class);
     }
 }
