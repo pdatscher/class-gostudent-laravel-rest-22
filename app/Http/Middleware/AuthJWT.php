@@ -7,19 +7,18 @@ use Exception;
 class AuthJWT
 {
 /**
- Handle an incoming request.
- *
- * @param \Illuminate\Http\Request $request
+ Handle an incoming request.*
+*@param \Illuminate\Http\Request $request
 *@param \Closure $next
 *@return mixed
 */
     public function handle($request, Closure $next){
         try {
             if(! $user = JWTAuth::parseToken()->authenticate()) {
-                return response()->json['user_not_found'], 404;
+                return response()->json(['user_not_found'], 404);
             }
         } catch (Exception $e) {
-            if ($ instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
+            if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
                 return response()->json(['error' => 'Invalid token.']);
             }
             else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){
