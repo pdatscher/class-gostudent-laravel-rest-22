@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\TutoringOffer;
+use App\Http\Controllers\TutoringController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//LISTENANSICHT
-Route::get('/', function () {
-    $tutoringOffers = DB::table('tutoring_offers')->get();
-    return view('index',compact('tutoringOffers'));
-});
-
-//DETAILANSICHT
-Route::get('/tutoringoffers/{id}', function($id) {
-    $tutoringOffer = DB::table('tutoring_offers')->find($id);
-    //dd($tutoringOffer);
-    return view('show',compact('tutoringOffer'));
-});
-
-//FILTEROPTIONEN
-// zB im zugehörigen Model isFavourite-Funktion einbauen
+Route::get('/', [TutoringController::class, 'index']);
+Route::get('/tutoringoffers', [TutoringController::class, 'index']);
+Route::get('/tutoringoffers/{id}', [TutoringController::class, 'show']);
 
 

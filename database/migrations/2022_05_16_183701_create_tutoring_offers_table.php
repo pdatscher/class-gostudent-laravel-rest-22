@@ -20,9 +20,14 @@ class CreateTutoringOffersTable extends Migration
             $table->text('description')->nullable();
             //$table->integer('user_id')->default(1);
 
-            $table->foreignId('user_id')
-                ->unique()->constrained()
+            $table->integer('user_id')->unsigned();
+            //create database constraint
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
+            //$table->foreignId('user_id')->nullable()
+            //    ->unique()->constrained()
+            //    ->onDelete('cascade');
             //fk field for relations: model name lowercase + "_id"
             //unsigned immer bei incrementing verwenden
             /*$table->integer('user_id')->unsigned();

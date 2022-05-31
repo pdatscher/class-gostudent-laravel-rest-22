@@ -106,6 +106,74 @@ class TutoringController extends Controller
 
     }
 
+    public function update(Request $request, int $id) : JsonResponse
+    {
+
+        DB::beginTransaction();
+        try {
+            $offer = TutoringOffer::with(['user', 'dates'])
+                ->where('id', $id)->first();
+            if ($offer != null) {
+                $request = $this->parseRequest($request);
+                $offer->update($request->all());
+
+
+                //delete all dates
+                $offer->dates()->delete();
+                // save dates
+                if (isset($request['dates']) && is_array($request['dates'])) {
+                    foreach ($request['dates'] as $d) {
+                        $date = AvailableDate::firstOrNew([
+                            'day' => $d['day'],
+                            'time' => $d['time']
+                        ]);
+                        $offer->dates()->save($date);
+                    }
+                }
+
+                // update user
+                if (isset($request['users']) && is_array($request['users'])) {
+                    foreach ($request['users'] as $user) {
+                        $user = User::firstOrNew([
+                            'name' => $user['name'],
+                            'email' => $user['email'],
+                            'password' => $user['password'],
+                            'isTutor' => $user['isTutor'],
+                        ]);
+                        $offer->user()->save($user);
+                    }
+                }
+            }
+
+            DB::commit();
+            $offer1 = TutoringOffer::with(['user', 'dates'])
+                ->where('id', $id)->first();
+            // return a vaild http response
+            return response()->json($offer1, 201);
+        }
+        catch (\Exception $e) {
+            // rollback all queries
+            DB::rollBack();
+            return response()->json("updating offer failed: " . $e->getMessage(), 420);
+        }
+    }
+
+
+    /**
+     * returns 200 if book deleted successfully, throws excpetion if not
+     */
+    public function delete(int $id) : JsonResponse
+    {
+        $tutoringOffer = TutoringOffer::where('id', $id)->first();
+        if ($tutoringOffer != null) {
+            $tutoringOffer->delete();
+        }
+        else
+            throw new \Exception("offer couldn't be deleted - it does not exist");
+        return response()->json('offer (' . $id . ') successfully deleted', 200);
+
+    }
+
 
     private function parseRequest(Request $request) : Request {
 

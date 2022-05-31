@@ -24,6 +24,18 @@ class UserController extends Controller
         return $request;
     }
 
+    public function index() {
+        $users = User::all();
+        return $users;
+    }
+
+    public function findByID($id) : User {
+
+        $user = User::where('id', $id)
+            ->first();
+        return $user;
+    }
+
     public function save (Request $request) : JsonResponse {
         $request = $this->parseRequest($request);
 

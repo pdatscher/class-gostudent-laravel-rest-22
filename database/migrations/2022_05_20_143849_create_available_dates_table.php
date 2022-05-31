@@ -27,6 +27,13 @@ class CreateAvailableDatesTable extends Migration
                 ->references('id')->on('tutoring_offers')
                 ->onDelete('cascade');
 
+            $table->integer('user_id')->unsigned()->nullable();
+
+            //create database constraint
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class AvailableDate extends Model
      * define all properties that should be writeable
      * @var string[]
      */
-    protected $fillable =['date', 'time'];
+    protected $fillable =['day', 'time', 'tutoring_offer_id', 'user_id'];
 
     /**
      * tutoring offer has many available dates
@@ -31,6 +31,10 @@ class AvailableDate extends Model
     /*public function date() : BelongsTo {
         return $this->belongsTo(ScheduledTutoring::class);
     }*/
+
+    public function bookedBy() : BelongsTo {
+        return $this->belongsTo(User::class);
+    }
 
     public function date() : HasMany {
         return $this->belongsTo(ScheduledTutoring::class);
