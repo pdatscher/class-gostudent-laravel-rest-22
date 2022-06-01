@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4af56215-b544-43ac-9bc4-ee0fc0e6b6c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/AvailableDate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/AvailableDate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TutoringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TutoringController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +212,7 @@
       <workItem from="1654007325490" duration="8388000" />
       <workItem from="1654025042841" duration="1415000" />
       <workItem from="1654061575770" duration="4797000" />
-      <workItem from="1654090646507" duration="4538000" />
+      <workItem from="1654090646507" duration="5773000" />
     </task>
     <task id="LOCAL-00001" summary="first model and migration">
       <created>1652871481668</created>

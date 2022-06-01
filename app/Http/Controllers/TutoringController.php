@@ -75,7 +75,8 @@ class TutoringController extends Controller
                 foreach ($request['dates'] as $date) {
                     $date = AvailableDate::firstOrNew([
                         'day' => $date['day'],
-                        'time' => $date['time']
+                        'time' => $date['time'],
+                        'user_id' => $date['user_id']
                     ]);
                     $newTutoringOffer->dates()->save($date);
                 }
@@ -125,7 +126,8 @@ class TutoringController extends Controller
                     foreach ($request['dates'] as $d) {
                         $date = AvailableDate::firstOrNew([
                             'day' => $d['day'],
-                            'time' => $d['time']
+                            'time' => $d['time'],
+                            'user_id'=> $d['user_id']
                         ]);
                         $offer->dates()->save($date);
                     }
