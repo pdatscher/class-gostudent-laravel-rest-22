@@ -17,15 +17,15 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('url');
             $table->string('title');
-            //1:n relation anlegen
-            /*
-            $table->bigInteger("tutoring_offers_id")->unsigned();
 
-            //create constraint - image wird bei löschen von tutoring offer gelöscht
-            $table->foreign('tutoring_offers_id')
-                ->references('id')->on('tutoring_offers')
+            $table->integer("user_id")->unsigned();
+
+
+            //create constraint - image wird bei löschen von user gelöscht
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onDelete('cascade');
-*/
+
             $table->timestamps();
         });
     }

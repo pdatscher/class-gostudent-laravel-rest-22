@@ -9,7 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class
+User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
@@ -19,7 +20,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'isTutor'
+        'name', 'email', 'skills', 'password', 'isTutor'
     ];
 
     /**
@@ -46,6 +47,10 @@ class User extends Authenticatable implements JWTSubject
 
     public function scheduled() : HasMany {
         return $this->hasMany(ScheduledTutoring::class);
+    }
+
+    public function images() : HasMany {
+        return $this->hasMany(Image::class);
     }
 
     public function getJWTIdentifier()
