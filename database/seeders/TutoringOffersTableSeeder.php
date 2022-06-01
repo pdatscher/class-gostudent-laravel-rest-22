@@ -44,18 +44,27 @@ class TutoringOffersTableSeeder extends Seeder
 
 
         //add available dates to offers
-        $date1 = new \App\Models\AvailableDate;
+        $date1 = new AvailableDate;
         $date1->day = DateTime::createFromFormat('Y-m-d', '2022-05-20');
         $date1->time = DateTime::createFromFormat('G-i', '18-30');
 
-        $date2 = new \App\Models\AvailableDate;
+        $date2 = new AvailableDate;
         $date2->day = DateTime::createFromFormat('Y-m-d', '2022-05-22');
         $date2->time = DateTime::createFromFormat('G-i', '14-00');
 
         $tutoringOffer->dates()->saveMany([$date1,$date2]);
-
-
         $tutoringOffer->save();
 
+        $date3 = new AvailableDate;
+        $date3->day = DateTime::createFromFormat('Y-m-d', '2022-06-02');
+        $date3->time = DateTime::createFromFormat('G-i', '18-00');
+        $tutoringOffer2->dates()->save($date3);
+        $tutoringOffer2->save();
+
+        $date4 = new AvailableDate;
+        $date4->day = DateTime::createFromFormat('Y-m-d', '2022-07-02');
+        $date4->time = DateTime::createFromFormat('G-i', '14-00');
+        $tutoringOffer3->dates()->save($date4);
+        $tutoringOffer3->save();
     }
 }

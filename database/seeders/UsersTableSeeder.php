@@ -44,16 +44,19 @@ class UsersTableSeeder extends Seeder
         $image1->title = "Userbild 1";
         $image1->url = "https://junq.at/wp-content/uploads/2018/02/bazibaer.png";
         $user->images()->save($image1);
+        $user->save();
 
         $image2 = new Image;
         $image2->title = "Userbild 2";
         $image2->url = "https://junq.at/wp-content/uploads/2021/12/sarahlang.png";
         $user2->images()->save($image2);
+        $user2->save();
 
 
         $image3 = new Image;
         $image3->title = "Userbild 3";
         $image3->url = "https://junq.at/wp-content/uploads/2017/01/Foto-Klein-Marco-1.jpg";
         $user3->images()->save($image3);
+        $user3->save();
     }
 }

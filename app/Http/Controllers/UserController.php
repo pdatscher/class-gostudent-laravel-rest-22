@@ -41,6 +41,17 @@ class UserController extends Controller
 
         try {
             $user = User::create($request->all());
+
+            // save images
+            if (isset($request['images']) && is_array($request['images'])) {
+                foreach ($request['images'] as $img) {
+                    $image = Image::firstOrNew([
+                        'url' => $img['url'],
+                        'title' => $img['title']
+                    ]);
+                    $user->images()->save($image);
+                }
+            }
             return response()->json($user, 201);
         } catch (\Exception $e) {
             return response()->json("saving user failed: " . $e->getMessage(), 420);
