@@ -24,19 +24,15 @@ class AvailableDate extends Model
     /**
      * tutoring offer has many available dates
      */
-    public function tutoring() : BelongsTo {
+    public function tutoringOffer() : BelongsTo {
         return $this->belongsTo(TutoringOffer::class);
     }
 
-    /*public function date() : BelongsTo {
-        return $this->belongsTo(ScheduledTutoring::class);
-    }*/
 
-    public function bookedBy() : BelongsTo {
+    public function user() : BelongsTo {
         return $this->belongsTo(User::class);
     }
 
-    public function date() : HasMany {
-        return $this->belongsTo(ScheduledTutoring::class);
-    }
+
+
 }

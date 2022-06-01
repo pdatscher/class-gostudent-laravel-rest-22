@@ -38,6 +38,8 @@ Route::group(['middleware' => ['api', 'auth.jwt']], function() {
     Route::put('dates/{id}', [DateController::class, 'update']);
     Route::delete('dates/{id}', [DateController::class, 'delete']);
 
+    Route::get('dates/bookings/{id}', [DateController::class, 'datesByUserID']);
+
     Route::post('auth/logout',[AuthController::class,'logout']);
 });
 

@@ -14,9 +14,11 @@ class AuthController extends Controller
     // get JWT via credentials
     public function login() {
         $credentials = request(['email', 'password']);
+
         if (! $token = Auth::guard('api')->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+
         return $this->respondWithToken($token);
     }
 

@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 class DateController extends Controller
 {
-    public function save (Request $request) : JsonResponse {
+    public function save(Request $request): JsonResponse
+    {
 
         try {
             $date = AvailableDate::create($request->all());
@@ -21,7 +22,8 @@ class DateController extends Controller
         }
     }
 
-    public function update (Request $request, $id) : JsonResponse {
+    public function update(Request $request, $id): JsonResponse
+    {
 
         try {
             $date = AvailableDate::where('id', $id)->first();
@@ -35,14 +37,19 @@ class DateController extends Controller
         }
     }
 
-    public function delete ($id) : JsonResponse {
+    public function delete($id): JsonResponse
+    {
         $date = AvailableDate::where('id', $id)->first();
         if ($date != null) {
             $date->delete();
-        }
-        else {
+        } else {
             throw new \Exception("date with id = ' . $id . ' couldn't be deleted - it does not exist");
         }
         return response()->json('date with id = ' . $id . ' successfully deleted', 200);
+    }
+
+    public function datesByUserID($id)
+    {
+        return AvailableDate::with('tutoringOffer')->where('user_id', $id)->get();
     }
 }
